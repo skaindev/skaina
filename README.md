@@ -1,2 +1,1 @@
-# skaina
-## Skaina-core-testnet
+# Skaina-core-testnet
