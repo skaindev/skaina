@@ -1,0 +1,20 @@
+//go:build none
+// +build none
+
+// This program generates contract/code.go, which contains the chequebook code
+// after deployment.
+package main
+
+import (
+	"math/big"
+
+	"github.com/skaindev/skaina/chain/core"
+	"github.com/skaindev/skaina/utilities/crypto"
+)
+
+var (
+	testKey, _ = crypto.HexToECDSA("b71c71a67e1177ad4e901695e1b4b9ee17ae16c6668d313eac2f96dbcda3f291")
+	testAlloc  = core.GenesisAlloc{
+		crypto.PubkeyToAddress(testKey.PublicKey): {Balance: big.NewInt(500000000000)},
+	}
+)
